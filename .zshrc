@@ -17,11 +17,15 @@ export PATH=$PATH:$ANDROID_HOME/platform-tools
 
 export PATH=$PATH:$GOPATH/bin:/snap/bin
 
-alias snapcraft='docker run -it --rm -v "$PWD:$PWD" -w "$PWD" snapcore/snapcraft snapcraft' 
+alias snapcraft='docker run -it --rm -v "$PWD:$PWD" -w "$PWD" -v "$HOME/.config/snapcraft:/root/.config/snapcraft" snapcore/snapcraft snapcraft' 
 alias mongorestore='docker run --rm -v $PWD:$PWD -w "$PWD" --link db:db mongo mongorestore --host=db'
 alias mongodump='docker run --rm -v $PWD:$PWD -w "$PWD" --link db:db mongo mongodump --host=db'
 alias mongo='docker run -it --rm -v $PWD:PWD -w "$PWD" --link db:db mongo mongo --host=db'
+alias jekyll='docker run -it --rm -v $PWD:$PWD -w $PWD -p 4000:4000 jekyll/jekyll jekyll'
 
 alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
 export PATH="/usr/local/opt/node@8/bin:$PATH"
+
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /usr/local/bin/mc mc
