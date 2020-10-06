@@ -41,6 +41,7 @@ let g:ctrlp_working_path_mode = 'ra'
         \ 'file': '\.exe$\|\.so$'
 	\ }
 
+tnoremap <ESC> <C-\><C-n>
 
 " Lets go hard core and turn arrow keys off
 map <Down> <NOP>
