@@ -1,6 +1,7 @@
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 export GPG_TTY=$(tty)
+export EDITOR=nvim
 
 # Start Oh-my-zsh stuff
 export ZSH=$HOME/.oh-my-zsh
