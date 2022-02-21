@@ -1,5 +1,10 @@
 # dotfiles
 
+## Pre-req
+* tmux
+* neovim
+* [starship](https://starship.rs)
+
 Alias created as config that will reference the repo.
 
 To pull into a new system:
