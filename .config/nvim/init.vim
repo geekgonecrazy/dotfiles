@@ -18,7 +18,7 @@ set nu
 set foldlevelstart=99
 set scrolloff=7
 "use y and p with the system clipboard
-set clipboard=unnamedplus
+"set clipboard=unnamedplus
 
 "==================================================================================
 "plugins
