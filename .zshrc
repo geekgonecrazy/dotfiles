@@ -31,6 +31,7 @@ alias snapcraft='docker run -it --rm -v "$PWD:$PWD" -w "$PWD" -v "$HOME/.config/
 alias mongorestore='docker run --rm -v $PWD:$PWD -w "$PWD" --link db:db mongo mongorestore --host=db'
 alias mongodump='docker run --rm -v $PWD:$PWD -w "$PWD" --link db:db mongo mongodump --host=db'
 alias mongo='docker run -it --rm -v $PWD:PWD -w "$PWD" --link db:db mongo mongo --host=db'
+alias redis-cli='docker run -it --rm -v $PWD:PWD -w "$PWD" redis redis-cli'
 alias jekyll='docker run -it --rm -v $PWD:$PWD -w $PWD -p 4000:4000 jekyll/jekyll jekyll'
 
 alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
@@ -44,3 +45,7 @@ export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
 # Start starship prompt
 eval "$(starship init zsh)"
+
+### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
+export PATH="/Users/aaron/.rd/bin:$PATH"
+### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
