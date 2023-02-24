@@ -6,7 +6,8 @@ vim.cmd[[colorscheme catppuccin]]
 require'nvim-treesitter.configs'.setup { ensure_installed = { 'python', 'javascript', 'lua', 'rust', 'c', 'go', 'typescript' }, highlight = { enable = true } }
 
 -- Native LSP Setup
-local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
+--local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
+local capabilities = require('cmp_nvim_lsp').default_capabilities
 local lspconfig = require('lspconfig')
 
 local map = vim.api.nvim_set_keymap

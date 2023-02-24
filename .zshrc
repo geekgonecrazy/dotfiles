@@ -34,6 +34,12 @@ alias mongo='docker run -it --rm -v $PWD:PWD -w "$PWD" --link db:db mongo mongo 
 alias redis-cli='docker run -it --rm -v $PWD:PWD -w "$PWD" redis redis-cli'
 alias jekyll='docker run -it --rm -v $PWD:$PWD -w $PWD -p 4000:4000 jekyll/jekyll jekyll'
 
+alias butane='podman run --rm --interactive       \
+              --security-opt label=disable        \
+              --volume ${PWD}:/pwd --workdir /pwd \
+              quay.io/coreos/butane:release'
+
+
 alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
 export PATH="/usr/local/opt/node@8/bin:$PATH"
@@ -43,8 +49,6 @@ complete -o nospace -C /usr/local/bin/mc mc
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
-# Start starship prompt
-eval "$(starship init zsh)"
 
 ### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
 export PATH="/Users/aaron/.rd/bin:$PATH"
