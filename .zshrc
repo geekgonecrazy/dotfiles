@@ -33,6 +33,8 @@ alias mongodump='docker run --rm -v $PWD:$PWD -w "$PWD" --link db:db mongo mongo
 alias mongo='docker run -it --rm -v $PWD:PWD -w "$PWD" --link db:db mongo mongo --host=db'
 alias redis-cli='docker run -it --rm -v $PWD:PWD -w "$PWD" redis redis-cli'
 alias jekyll='docker run -it --rm -v $PWD:$PWD -w $PWD -p 4000:4000 jekyll/jekyll jekyll'
+alias meteor='docker run -it --rm --name=app -v $PWD:/app -p 3000:3000 meteor-dev'
+alias meteor2='docker run -it --rm --name=app -v $HOME/.meteor-cache:/home/app/.meteor:Z -v $PWD:/app:Z -u $(id -u):$(id -g) --network=host -e MONGO_URL="mongodb://localhost:27017/meteor?replicaSet=rs0" --entrypoint=/bin/bash meteor-dev'
 
 alias butane='podman run --rm --interactive       \
               --security-opt label=disable        \
@@ -53,3 +55,8 @@ export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 ### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
 export PATH="/Users/aaron/.rd/bin:$PATH"
 ### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
+
+export PATH=$PATH:/usr/local/go/bin
+
+alias docker="distrobox-host-exec podman"
+alias docker-compose="distrobox-host-exec podman-compose"
