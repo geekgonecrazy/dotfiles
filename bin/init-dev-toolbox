@@ -1,0 +1,3 @@
+#!/bin/bash
+
+toolbox create --image ghcr.io/geekgonecrazy/dev-toolbox dev-toolbox
