@@ -1,5 +1,5 @@
 require("mason-null-ls").setup({
-  ensure_installed = { "stylua", "prettierd", "eslint_d" },
+  ensure_installed = { "stylua", "prettierd", "eslint_d", "golangci-lint", "gopls", "lua-language-server" },
   automatic_installation = true,
 })
 
