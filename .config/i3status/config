@@ -1,0 +1,57 @@
+general {
+        colors = true
+        interval = 5
+}
+
+#order += "ipv6" # leaving here but I share screen too much to keep enabled and be giving away non-linklocal ipv6
+order += "wireless _first_"
+order += "ethernet _first_"
+order += "battery all"
+order += "disk /"
+order += "load"
+order += "memory"
+order += "cpu_usage"
+order += "disk /"
+order += "tztime local"
+
+wireless _first_ {
+        format_up = "W: (%quality at %essid) %ip"
+        format_down = "W: down"
+}
+
+ethernet _first_ {
+        format_up = "E: %ip (%speed)"
+        format_down = "E: down"
+}
+
+battery all {
+        format = "%status %percentage %remaining"
+}
+
+disk "/" {
+        format = "%avail"
+}
+
+load {
+        format = "%1min"
+}
+
+memory {
+        format = "%used | %available"
+        threshold_degraded = "1G"
+        format_degraded = "MEMORY < %available"
+}
+
+cpu_usage {
+  format = "Cpu: %usage"
+}
+
+
+
+disk "/" {
+  format = "/: %percentage_used"
+}
+
+tztime local {
+        format = "%Y-%m-%d %H:%M:%S"
+}
