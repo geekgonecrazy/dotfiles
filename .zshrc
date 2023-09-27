@@ -12,6 +12,7 @@ ZSH_THEME="ys"
 plugins=(git)
 source $ZSH/oh-my-zsh.sh
 # End Oh-my-zsh stuff
+eval "$(starship init zsh)"
 
 HISTCONTROL=ignoredups:erasedups
 export HISTSIZE=100000
@@ -20,6 +21,7 @@ export HISTFILESIZE=100000
 export EDITOR=nvim
 
 export GOPATH=~/go
+export GOPROXY="https://proxy.golang.org,direct"
 
 export ANDROID_HOME=$HOME/Android/Sdk
 export PATH=$PATH:$ANDROID_HOME/tools
@@ -58,5 +60,12 @@ export PATH="/Users/aaron/.rd/bin:$PATH"
 
 export PATH=$PATH:/usr/local/go/bin
 
+# Add rust
+export PATH=$PATH:$HOME/.cargo/bin
+
 alias docker="distrobox-host-exec podman"
 alias docker-compose="distrobox-host-exec podman-compose"
+alias code="distrobox-host-exec flatpak run com.visualstudio.code"
+
+export KUBECONTEXT=default
+alias k='kubectl --context=$KUBECONTEXT'
