@@ -78,8 +78,8 @@ floating_modifier $mod
 
 # start a terminal
 #bindsym $mod+Return exec i3-sensible-terminal
-bindsym $mod+Return exec alacritty -e toolbox enter dev-toolbox
-#bindsym $mod+Return exec alacritty -e distrobox enter dev -- zsh
+#bindsym $mod+Return exec alacritty -e toolbox enter dev-toolbox
+bindsym $mod+Return exec alacritty -e distrobox enter dev -- zsh
 bindsym $mod+shift+Return exec alacritty
 
 # kill focused window
@@ -181,6 +181,7 @@ bindsym $mod+Shift+0 move container to workspace number $ws10
 
 
 assign [class="Rocket.Chat"] $ws9
+assign [class="Element"] $ws9
 assign [class="Spotify"] $ws10
 
 

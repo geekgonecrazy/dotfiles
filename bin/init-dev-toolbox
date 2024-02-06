@@ -1,3 +1,4 @@
 #!/bin/bash
-
-toolbox create --image ghcr.io/geekgonecrazy/dev-toolbox dev-toolbox
+podman pull ghcr.io/geekgonecrazy/dev-toolbox
+#toolbox create --image ghcr.io/geekgonecrazy/dev-toolbox dev-toolbox
+distrobox create -i ghcr.io/geekgonecrazy/dev-toolbox --volume /var/run/docker.sock -n dev

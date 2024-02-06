@@ -37,6 +37,7 @@ alias redis-cli='docker run -it --rm -v $PWD:PWD -w "$PWD" redis redis-cli'
 alias jekyll='docker run -it --rm -v $PWD:$PWD -w $PWD -p 4000:4000 jekyll/jekyll jekyll'
 alias meteor='docker run -it --rm --name=app -v $PWD:/app -p 3000:3000 meteor-dev'
 alias meteor2='docker run -it --rm --name=app -v $HOME/.meteor-cache:/home/app/.meteor:Z -v $PWD:/app:Z -u $(id -u):$(id -g) --network=host -e MONGO_URL="mongodb://localhost:27017/meteor?replicaSet=rs0" --entrypoint=/bin/bash meteor-dev'
+alias yt-dlp="podman run --rm -v $HOME/media:/downloads:Z -w /downloads jauderho/yt-dlp"
 
 alias butane='podman run --rm --interactive       \
               --security-opt label=disable        \
@@ -63,9 +64,9 @@ export PATH=$PATH:/usr/local/go/bin
 # Add rust
 export PATH=$PATH:$HOME/.cargo/bin
 
-alias docker="distrobox-host-exec podman"
-alias docker-compose="distrobox-host-exec podman-compose"
 alias code="distrobox-host-exec flatpak run com.visualstudio.code"
 
 export KUBECONTEXT=default
 alias k='kubectl --context=$KUBECONTEXT'
+
+eval "$(atuin init zsh)"
