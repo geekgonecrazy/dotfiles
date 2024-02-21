@@ -42,6 +42,24 @@ vim.keymap.set('n', '<leader>f,', builtin.builtin, { desc = 'Telescope: Built-in
 -- Git management
 vim.keymap.set('n', '<leader>gs', builtin.git_status, { desc = 'Telescope: Git status' })
 
+local is_inside_work_tree = {};
+
+vim.keymap.set('n', '<leader>gf', function()
+	local opts = {} -- define here if you want to define something
+
+	local cwd = vim.fn.getcwd()
+	if is_inside_work_tree[cwd] == nil then
+		vim.fn.system("git rev-parse --is-inside-work-tree")
+		is_inside_work_tree[cwd] = vim.v.shell_error == 0
+	end
+
+	if is_inside_work_tree[cwd] then
+		builtin.git_files(opts)
+	else
+		builtin.find_files(opts)
+	end
+end, { desc = 'Telescope: Git files' })
+
 vim.keymap.set('n', '<leader>fs', function()
 	--builtin.grep_string({ search = vim.fn.input('Grep > ') })
 	builtin.live_grep()
@@ -52,21 +70,5 @@ vim.keymap.set('n', '<leader>ff', function()
 	local opts = {} -- define here if you want to define something
 
 	builtin.find_files(opts)
-end, { desc = 'Telescope: Smart find files' })
+end, { desc = 'Telescope: find files' })
 
---local is_inside_work_tree = {};
-
---vim.keymap.set('n', '<leader>ff', function()
---
---	local cwd = vim.fn.getcwd()
---	if is_inside_work_tree[cwd] == nil then
---		vim.fn.system("git rev-parse --is-inside-work-tree")
---		is_inside_work_tree[cwd] = vim.v.shell_error == 0
---	end
---
---	if is_inside_work_tree[cwd] then
---		builtin.git_files(opts)
---	else
---		builtin.find_files(opts)
---	end
---end, { desc = 'Telescope: Smart find files' })
