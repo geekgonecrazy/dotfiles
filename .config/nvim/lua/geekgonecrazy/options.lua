@@ -40,6 +40,8 @@ opt.listchars:append("space:⋅")
 opt.listchars:append("eol:↴")
 opt.listchars:append("tab:▸ ")
 
+opt.clipboard:append("unnamedplus")
+
 vim.g.netrw_liststyle = 3
 
 -- opt.colorcolumn = "80"
