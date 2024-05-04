@@ -4,6 +4,7 @@
 * tmux
 * neovim
 * [starship](https://starship.rs)
+* [Atuin](https://atuin.sh/)
 
 Alias created as config that will reference the repo.
 
