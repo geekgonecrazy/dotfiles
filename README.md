@@ -1,6 +1,8 @@
 # dotfiles
 
 ## Pre-req
+* brew - mac
+* go
 * tmux
 * neovim
 * [starship](https://starship.rs)
