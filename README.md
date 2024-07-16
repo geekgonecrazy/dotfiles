@@ -5,6 +5,7 @@
 * go
 * tmux
 * neovim
+* fzf -- needed by telescope neovim plugin
 * [starship](https://starship.rs)
 * [Atuin](https://atuin.sh/)
 
@@ -26,6 +27,11 @@ config submodule update --init --recursive
 source .zshrc
 ```
 
+### Tmux 
 To initialize tmux plugins:
 
 prefix + I (capital i, as in Install) to fetch the plugins
+
+### Neovim
+
+Launch nvim and do `:PackerInstall`  from here Mason should kick off and start installing some other needed plugins
