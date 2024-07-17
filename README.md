@@ -3,6 +3,7 @@
 ## Pre-req
 * brew - mac
 * go
+* cmake - needed by neovim telescope-fzf-native.nvim
 * tmux
 * neovim
 * fzf -- needed by telescope neovim plugin
