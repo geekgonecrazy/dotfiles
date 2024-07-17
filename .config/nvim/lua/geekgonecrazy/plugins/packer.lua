@@ -28,10 +28,13 @@ return require("packer").startup(function(use)
 	})
 
 	-- REQUIRED! This allows for further refinement of search results
-	use({
-		"nvim-telescope/telescope-fzf-native.nvim",
-		run = "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build",
-	})
+	--use({
+	--	"nvim-telescope/telescope-fzf-native.nvim",
+	--	run = "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build",
+	--})
+
+	use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release' }
+
 
 	use({
 		"nvim-treesitter/nvim-treesitter",
