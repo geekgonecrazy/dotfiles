@@ -1,37 +1,47 @@
 # dotfiles
 
+Cross-platform dotfiles managed with [dotling](https://github.com/auricvex/dotling).
+
 ## Pre-req
-* brew - mac
+
+* [dotling](https://auricvex.github.io/dotling/getting-started.html) — `cargo install dotling` or `brew install dotling`
 * go
-* cmake, make, fzf, rg - needed by neovim
+* cmake, make, fzf, rg — needed by neovim
 * tmux
 * neovim
 * [starship](https://starship.rs)
 * [Atuin](https://atuin.sh/)
 
-Alias created as config that will reference the repo.
+## Setup on a new machine
 
-To pull into a new system:
-
-```
-alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
-git clone --bare https://github.com/geekgonecrazy/dotfiles.git $HOME/.dotfiles
-
-config config --local status.showUntrackedFiles no
-
-config checkout
-
-# bring in any submodules
-config submodule update --init --recursive
-
-source .zshrc
+```sh
+dotling init git@github.com:geekgonecrazy/dotfiles.git
+dotling sync
+source ~/.zshrc
 ```
 
-### Tmux 
-To initialize tmux plugins:
+If you have encrypted entries, import your vault first:
 
-prefix + I (capital i, as in Install) to fetch the plugins
+```sh
+dotling vault import my-vault.bundle
+dotling sync
+```
 
-### Neovim
+## What gets tracked
 
-Launch nvim and do `:PackerInstall`  from here Mason should kick off and start installing some other needed plugins
+| Config | Deployed to | Notes |
+|--------|-------------|-------|
+| `.zshrc` | `~/.zshrc` | |
+| `.tmux.conf` | `~/.tmux.conf` | |
+| `.config/alacritty/` | `~/.config/alacritty/` | |
+| `.config/i3/` | `~/.config/i3/` | Linux only |
+| `.config/i3status/` | `~/.config/i3status/` | Linux only |
+| `.config/nvim/` | `~/.config/nvim/` | Copy mode (not symlinked) |
+| `.cargo/config` | `~/.cargo/config` | |
+| `.local/share/fonts/` | `~/.local/share/fonts/` | |
+| `bin/` | `~/bin/` | |
+| `.Xresources-xps13` | `~/.Xresources-xps13` | Linux only |
+
+## Neovim
+
+Launch nvim and do `:PackerInstall`. From here Mason should kick off and start installing some other needed plugins.
