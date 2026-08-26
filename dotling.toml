@@ -1,0 +1,83 @@
+# dotling.toml — managed by dotling, safe to hand-edit
+
+[settings]
+method = "symlink"
+
+# ── Shell ──────────────────────────────────────────────
+
+[[entries]]
+source = ".zshrc"
+target = "~/.zshrc"
+
+# ── Tmux ───────────────────────────────────────────────
+
+[[entries]]
+source = ".tmux.conf"
+target = "~/.tmux.conf"
+
+# ── Alacritty ──────────────────────────────────────────
+
+[[entries]]
+source = ".config/alacritty/alacritty.toml"
+target = "~/.config/alacritty/alacritty.toml"
+
+[[entries]]
+source = ".config/alacritty/alacritty.yml"
+target = "~/.config/alacritty/alacritty.yml"
+
+# ── i3 (Linux only) ───────────────────────────────────
+
+[[entries]]
+source = ".config/i3/config"
+target = "~/.config/i3/config"
+os = "linux"
+
+[[entries]]
+source = ".config/i3status/config"
+target = "~/.config/i3status/config"
+os = "linux"
+
+# ── Neovim ─────────────────────────────────────────────
+
+[[entries]]
+source = ".config/nvim/init.lua"
+target = "~/.config/nvim/init.lua"
+method = "copy"
+
+[[entries]]
+source = ".config/nvim/lua/geekgonecrazy"
+target = "~/.config/nvim/lua/geekgonecrazy"
+directory = true
+method = "copy"
+
+[[entries]]
+source = ".config/nvim/after"
+target = "~/.config/nvim/after"
+directory = true
+method = "copy"
+
+# ── Cargo ──────────────────────────────────────────────
+
+[[entries]]
+source = ".cargo/config"
+target = "~/.cargo/config"
+
+# ── Fonts ──────────────────────────────────────────────
+
+[[entries]]
+source = ".local/share/fonts"
+target = "~/.local/share/fonts"
+directory = true
+
+# ── Bin ────────────────────────────────────────────────
+
+[[entries]]
+source = "bin/init-dev-toolbox"
+target = "~/bin/init-dev-toolbox"
+
+# ── X resources (legacy, kept for other machines) ─────
+
+[[entries]]
+source = ".Xresources-xps13"
+target = "~/.Xresources-xps13"
+os = "linux"

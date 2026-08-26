@@ -1,2 +1,7 @@
 .dotfiles
 .config/nvim/plugin/packer_compiled.lua
+
+# dotling vault and secrets
+.dotling/
+*.bundle
+*vault*
